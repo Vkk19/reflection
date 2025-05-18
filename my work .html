@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VIVEK KUMAR KARADE</title>
+  
+  <!-- ✅ Embedded CSS -->
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      color: white;
+      position: relative;
+      height: 100vh;
+      background: black;
+    }
+
+    .flag {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .saffron, .white, .green {
+      width: 100%;
+      height: 33.33%;
+      position: absolute;
+      animation: blink 3s infinite;
+    }
+
+    .saffron {
+      top: 0;
+      background-color: #FF9933;
+      animation-delay: 0s;
+    }
+
+    .white {
+      top: 33.33%;
+      background-color: white;
+      animation-delay: 1s;
+    }
+
+    .green {
+      top: 66.66%;
+      background-color: #138808;
+      animation-delay: 2s;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.2; }
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      font-size: 24px;
+    }
+
+    header img {
+      height: 40px;
+      margin-right: 15px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+      gap: 20px;
+    }
+
+    .buttons button {
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+    }
+
+    .physics { background-color: red; color: rgb(117, 15, 87); }  
+    .chemistry { background-color: pink; color: black; }
+    .biology { background-color: green; color: white; }
+
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      display: flex;
+      align-items: center;
+      animation: blink 1s infinite;
+    }
+
+    .whatsapp img {
+      height: 30px;
+      margin-right: 10px;
+    }
+
+    .chakra-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .chakra-img {
+      width: 100px;
+      animation: rotate 4s linear infinite;
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .clock {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      font-size: 18px;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 10px 15px;
+      border-radius: 10px;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Flag Background -->
+  <div class="flag">
+    <div class="saffron"></div>
+    <div class="white"></div>
+    <div class="green"></div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" alt="Facebook Logo">
+    <h1>VIVEK KUMAR KARADE</h1>
+  </header>
+
+  <!-- Subject Buttons -->
+  <div class="buttons">
+    <button class="physics"><a href = "reflection/index.html">PHYSICS</a>
+    <button class="chemistry"><a href = "pH/index.html">CHEMISTRY </a>
+    <button class="biology"><a href = "Microscope/index.html">BIOLOGY</a>
+  </div>
+   
+  <!-- Ashoka Chakra -->
+  <div class="chakra-container">
+    <img class="chakra-img" src="https://cdn.pixabay.com/photo/2023/04/06/16/29/ashoka-chakra-7904695_1280.png" alt="Ashoka Chakra">
+  </div>
+
+  <!-- WhatsApp Info -->
+  <div class="whatsapp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo">
+    <span>9039984429</span>
+  </div>
+
+  <!-- Clock -->
+  <div class="clock" id="clock"></div>
+
+  <!-- ✅ Embedded JavaScript -->
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const time = now.toLocaleTimeString();
+      const date = now.toLocaleDateString();
+      document.getElementById('clock').textContent = `${date} | ${time}`;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+</body>
+</html>
